@@ -1,0 +1,8 @@
+<form [formGroup]="form" >
+  <select [formControl]="userSelect">
+    <option *ngFor="let user of users" [ngValue]="user"><b>{{user.id}}</b> {{user.name}} {{user.username}}</option>
+  </select>
+  <button (click)="getCurrentUser()">get selected user</button>
+  <div *ngIf="form.controls.userSelect.invalid">to get user, please select one</div>
+</form>
+<router-outlet></router-outlet>

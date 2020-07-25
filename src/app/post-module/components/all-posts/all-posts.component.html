@@ -1,0 +1,8 @@
+<form [formGroup]="postForm">
+  <select [formControl]="selectPost">
+    <option *ngFor="let post of posts" [ngValue]="post"><b>{{post.id}}</b> {{post.title}}</option>
+  </select>
+  <button (click)="getCurrentPost()">get current post</button>
+  <div *ngIf="postForm.controls.selectPost.invalid">to get current post, please select one</div>
+</form>
+<router-outlet></router-outlet>
